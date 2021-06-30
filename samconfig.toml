@@ -1,0 +1,6 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "jenkins-demo-ux"
+s3_prefix = "jenkins-demo-ux"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
