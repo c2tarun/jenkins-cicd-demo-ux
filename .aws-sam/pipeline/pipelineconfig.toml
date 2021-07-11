@@ -2,20 +2,20 @@ version = 0.1
 [default]
 [default.pipeline_bootstrap]
 [default.pipeline_bootstrap.parameters]
-pipeline_user = "arn:aws:iam::916108123774:user/aws-sam-cli-managed-20210628-pipeline-PipelineUser-18ORRIB0KBR87"
+pipeline_user = "arn:aws:iam::660692570408:user/aws-sam-cli-managed-test-pipeline-res-PipelineUser-14ZGXCZVAWBMP"
 
-[20210628]
-[20210628.pipeline_bootstrap]
-[20210628.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::916108123774:role/aws-sam-cli-managed-20210628-PipelineExecutionRole-BX43A50MRGD"
-cloudformation_execution_role = "arn:aws:iam::916108123774:role/aws-sam-cli-managed-20210-CloudFormationExecutionR-1XU2JJLG5G96C"
-artifacts_bucket = "aws-sam-cli-managed-20210628-pipe-artifactsbucket-1j7bzybfgkpor"
+[test]
+[test.pipeline_bootstrap]
+[test.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-pip-PipelineExecutionRole-DQ32BPUT6RXG"
+cloudformation_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-CloudFormationExecutionR-93976TB3O1OF"
+artifacts_bucket = "aws-sam-cli-managed-test-pipeline-artifactsbucket-1pula8utcc21n"
 region = "us-east-1"
 
-[20210628-2]
-[20210628-2.pipeline_bootstrap]
-[20210628-2.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::916108123774:role/aws-sam-cli-managed-20210628-PipelineExecutionRole-BX43A50MRGD"
-cloudformation_execution_role = "arn:aws:iam::916108123774:role/aws-sam-cli-managed-20210-CloudFormationExecutionR-1XU2JJLG5G96C"
-artifacts_bucket = "aws-sam-cli-managed-20210628-pipe-artifactsbucket-1j7bzybfgkpor"
-region = "us-east-1"
+[prod]
+[prod.pipeline_bootstrap]
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-A47YJGABEDQ3"
+cloudformation_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-SPM39E9QEQSF"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline-artifactsbucket-ryka4t3exa39"
+region = "us-west-2"
