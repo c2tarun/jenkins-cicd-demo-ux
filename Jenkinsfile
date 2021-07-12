@@ -5,18 +5,18 @@ pipeline {
     SAM_TEMPLATE = 'template.yaml'
     MAIN_BRANCH = 'main'
     TESTING_STACK_NAME = 'test-stack'
-    TESTING_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-pip-PipelineExecutionRole-DQ32BPUT6RXG'
-    TESTING_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-CloudFormationExecutionR-93976TB3O1OF'
-    TESTING_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-test-pipeline-artifactsbucket-1pula8utcc21n'
+    TESTING_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-pip-PipelineExecutionRole-1MNXD9TBFCXZ7'
+    TESTING_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-CloudFormationExecutionR-1QX9PZXV4UYD8'
+    TESTING_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-test-pipeline-artifactsbucket-8oryxbu3ouig'
     // If there are functions with "Image" PackageType in your template,
     // uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
     // testing "sam package" and "sam deploy" commands.
     // TESTING_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
     TESTING_REGION = 'us-east-1'
     PROD_STACK_NAME = 'prod-stack'
-    PROD_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-A47YJGABEDQ3'
-    PROD_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-SPM39E9QEQSF'
-    PROD_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-prod-pipeline-artifactsbucket-ryka4t3exa39'
+    PROD_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-1I7NK8VEGLE5Z'
+    PROD_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-TX76AK46Z9L5'
+    PROD_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-prod-pipeline-artifactsbucket-3gsdj02auzku'
     // If there are functions with "Image" PackageType in your template,
     // uncomment the line below and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
     // prod "sam package" and "sam deploy" commands.
@@ -65,9 +65,9 @@ pipeline {
     }
 
     stage('build-and-package') {
-      //when {
-      //  branch env.MAIN_BRANCH
-      //}
+      when {
+        branch env.MAIN_BRANCH
+      }
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
@@ -108,9 +108,9 @@ pipeline {
     }
 
     stage('deploy-testing') {
-      //when {
-      //  branch env.MAIN_BRANCH
-      //}
+      when {
+        branch env.MAIN_BRANCH
+      }
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
@@ -148,9 +148,9 @@ pipeline {
     // }
 
     stage('deploy-prod') {
-    //  when {
-    //    branch env.MAIN_BRANCH
-    //  }
+      when {
+        branch env.MAIN_BRANCH
+      }
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
