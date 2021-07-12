@@ -54,7 +54,7 @@ pipeline {
             roleSessionName: 'deploying-feature') {
           sh '''
             sam deploy --stack-name $(echo ${BRANCH_NAME} | tr -cd '[a-zA-Z0-9-]') \
-              --capabilities CAPABILITY_IAM \
+              --capabilities CAPABILITY_NAMED_IAM \
               --region ${TESTING_REGION} \
               --s3-bucket ${TESTING_ARTIFACTS_BUCKET} \
               --no-fail-on-empty-changeset \
@@ -125,7 +125,7 @@ pipeline {
           sh '''
             sam deploy --stack-name ${TESTING_STACK_NAME} \
               --template packaged-testing.yaml \
-              --capabilities CAPABILITY_IAM \
+              --capabilities CAPABILITY_NAMED_IAM \
               --region ${TESTING_REGION} \
               --s3-bucket ${TESTING_ARTIFACTS_BUCKET} \
               --no-fail-on-empty-changeset \
@@ -165,7 +165,7 @@ pipeline {
           sh '''
             sam deploy --stack-name ${PROD_STACK_NAME} \
               --template packaged-prod.yaml \
-              --capabilities CAPABILITY_IAM \
+              --capabilities CAPABILITY_NAMED_IAM \
               --region ${PROD_REGION} \
               --s3-bucket ${PROD_ARTIFACTS_BUCKET} \
               --no-fail-on-empty-changeset \
