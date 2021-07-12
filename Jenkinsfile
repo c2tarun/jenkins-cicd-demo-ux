@@ -65,9 +65,9 @@ pipeline {
     }
 
     stage('build-and-package') {
-      when {
-        branch env.MAIN_BRANCH
-      }
+      //when {
+      //  branch env.MAIN_BRANCH
+      //}
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
@@ -108,9 +108,9 @@ pipeline {
     }
 
     stage('deploy-testing') {
-      when {
-        branch env.MAIN_BRANCH
-      }
+      //when {
+      //  branch env.MAIN_BRANCH
+      //}
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
@@ -148,9 +148,9 @@ pipeline {
     // }
 
     stage('deploy-prod') {
-      when {
-        branch env.MAIN_BRANCH
-      }
+      //when {
+      //  branch env.MAIN_BRANCH
+      //}
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
