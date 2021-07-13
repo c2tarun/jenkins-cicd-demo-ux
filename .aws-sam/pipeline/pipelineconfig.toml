@@ -1,21 +1,21 @@
 version = 0.1
 [default]
-[default.pipeline_bootstrap]
-[default.pipeline_bootstrap.parameters]
-pipeline_user = "arn:aws:iam::660692570408:user/aws-sam-cli-managed-test-pipeline-res-PipelineUser-5FXSHEII8WSH"
+[default.pipeline_init]
+[default.pipeline_init.parameters]
+pipeline_user = "arn:aws:iam::660692570408:user/aws-sam-cli-managed-test-pipeline-res-PipelineUser-NB8ON4ORUBMY"
 
 [test]
-[test.pipeline_bootstrap]
-[test.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-pip-PipelineExecutionRole-1MNXD9TBFCXZ7"
-cloudformation_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-CloudFormationExecutionR-1QX9PZXV4UYD8"
-artifacts_bucket = "aws-sam-cli-managed-test-pipeline-artifactsbucket-8oryxbu3ouig"
+[test.pipeline_init]
+[test.pipeline_init.parameters]
+pipeline_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-pip-PipelineExecutionRole-EPMK81HAT4JF"
+cloudformation_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-test-CloudFormationExecutionR-F84IA1M2SZPK"
+artifacts_bucket = "aws-sam-cli-managed-test-pipeline-artifactsbucket-zmihng5ibexs"
 region = "us-east-1"
 
 [prod]
-[prod.pipeline_bootstrap]
-[prod.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-1I7NK8VEGLE5Z"
-cloudformation_execution_role = "arn:aws:iam::660692570408:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-TX76AK46Z9L5"
-artifacts_bucket = "aws-sam-cli-managed-prod-pipeline-artifactsbucket-3gsdj02auzku"
+[prod.pipeline_init]
+[prod.pipeline_init.parameters]
+pipeline_execution_role = "arn:aws:iam::378812645829:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-662TD5SWMWWX"
+cloudformation_execution_role = "arn:aws:iam::378812645829:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-1A94GAEDR3QQ3"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline-artifactsbucket-1u13883vrwytt"
 region = "us-west-2"
