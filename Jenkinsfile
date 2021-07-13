@@ -66,7 +66,7 @@ pipeline {
 
     stage('build-and-package') {
       when {
-        branch 'main'
+        branch env.MAIN_BRANCH
       }
       agent {
         docker {
